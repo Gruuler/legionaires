@@ -1,5 +1,8 @@
 <head>
 
+<import class="text/rel" style="stylesheet" name="bootstrap.css"
+
+
 <title> Brother Legionaires </title>
 
 <script text="text/javascript">
@@ -21,7 +24,7 @@ var $ = function(x) {
 var charSearch = function() {
 	var character = $('cSearch').value;
 	if(character != ""){
-		var url = "https://www.bungie-platform.herokuapp.com/proxy/Destiny/SearchDestinyPlayer/1/" + character;
+		var url = "https://www.bungie.net/platform/Destiny/SearchDestinyPlayer/1/" + character;
 		var xmlHttp = createXMLHttp();
 		xmlHttp.open('get', url);
 		xmlHttp.send();
@@ -43,6 +46,8 @@ window.onload = function() {
 
 <?php
 
+//I want to scale back the header.  In a prior project, header handled everything.
+include 'header.php';
 ?>
 
 <form>
