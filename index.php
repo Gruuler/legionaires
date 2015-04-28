@@ -1,3 +1,57 @@
+<head>
+
+<title> Brother Legionaires </title>
+
+<script text="text/javascript">
+
+var createXMLHttp = function() {
+
+  if(window.XMLHttpRequest) {
+    xHttp = new XMLHttpRequest();
+  }else{
+    xHttp = new ActiveXObject("Microsoft/XMLHttp");
+  }
+  return xHttp;
+}
+
+var $ = function(x) {
+	return document.getElementById(x);
+}
+
+var charSearch = function() {
+	var character = $('cSearch').value;
+	if(character != ""){
+		var url = "https://www.bungie-platform.herokuapp.com/proxy/Destiny/SearchDestinyPlayer/1/" + character;
+		var xmlHttp = createXMLHttp();
+		xmlHttp.open('get', url);
+		xmlHttp.send();
+	}else{
+
+	}
+}
+
+window.onload = function() {
+	sButton.onclick = charSearch;
+}
+
+
+</script>
+
+</head>
+
+<body>
+
 <?php
-header ("location:login.html");
+
 ?>
+
+<form>
+	Character Name: <input type="text" name="character" id="cSearch">
+	<input type="button" value="Search" id="sButton">
+	<label for="cSearch">
+</form>
+
+<br>
+<a href="login.html">Log In To Continue</a>
+
+</body>
