@@ -6,7 +6,7 @@
  * $ chmod +x proxy
  * $ ./proxy 9000 or $ node proxy.js 9000
  *
- * Files obtained at https://github.com/waltfy/destiny/blob/develop/proxy.js and do not represent my own work.
+ * Files obtained at https://github.com/waltfy/destiny/blob/develop/proxy.js and do not represent Gruuler's own work.
  *
  */
 var https = require('https');
