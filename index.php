@@ -1,9 +1,10 @@
 <head>
 
-<import class="text/rel" style="stylesheet" name="bootstrap.css"
+<?php
+include 'master.php';
+?>
 
-
-<title> Brother Legionaires </title>
+<import class="text/rel" style="stylesheet" name="bootstrap.css">
 
 <script text="text/javascript">
 
