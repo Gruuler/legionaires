@@ -1,19 +1,75 @@
-<html>
 <head>
 
 	<title>Log In</title>
+
+<!-- Javascript to check variables. -->
+
+<script type="text/javascript"  src="scripts/javascript.js"></script>
+<script type="text/javascript">
+
+var submitForm = function() {
+	var shouldSubmit = true;
+
+	if($('uName').value.length < 3){
+		shouldSubmit = false;
+		$('badUser').innerHTML = "Username does not meet length requirements.";
+	}else{
+		$('badUser').innerHTML = "";
+	}
+
+	if($('password').value.length < 6){
+		shouldSubmit = false;
+		$('badPassword').innerHTML = "Password does not meet length requirements.";
+	}else{
+		$('badPassword').innerHTML = "";
+	}
+
+	if(shouldSubmit){
+		$("login").submit();
+	}
+}
+
+window.onload = function() {
+	$("loginSubmit").onclick = submitForm;
+}
+
+</script>
 
 </head>
 <body>
 
 <div>
 	<div class="login">
-		<form method="post" action="" id="login">
+		<form method="post" action="login.php" id='login'>
 
-			<input type="button" value = "Log In" id="submit">
+			<!-- Below is the table for logging in.  Users put in their user names, passwords, and click the login button.
+			Javascript will do some minor authentication to make sure that the information provided does not violate any
+			standard procedures. -->
+
+			<table>
+				<tr>
+					<td>Username: </td>
+					<td><input type="text" name="uName" id="uName"></td>
+				</tr>
+				<tr>
+					<td> </td>
+					<td><label id="badUser" class="error"></label></td>
+				</tr>
+				<tr>
+					<td>Password: </td>
+					<td><input type="password" name="password" id="password"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><label id="badPassword" class="error"></label></td>
+				</tr>
+				
+			</table>
+
+			<input type="button" value="Log In" id="loginSubmit">
+		
 		</form>
 	</div>
 </div>
 
 </body>
-</html>

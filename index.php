@@ -6,21 +6,7 @@ include 'master.php';
 
 <import class="text/rel" style="stylesheet" name="bootstrap.css">
 
-<script text="text/javascript">
-
-var createXMLHttp = function() {
-
-  if(window.XMLHttpRequest) {
-    xHttp = new XMLHttpRequest();
-  }else{
-    xHttp = new ActiveXObject("Microsoft/XMLHttp");
-  }
-  return xHttp;
-}
-
-var $ = function(x) {
-	return document.getElementById(x);
-}
+<script type="text/javascript" src="js/javascript.js">>
 
 var charSearch = function() {
 	var character = $('cSearch').value;

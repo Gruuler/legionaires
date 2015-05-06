@@ -1,3 +1,8 @@
 <?php
-if(!empty(COOKIE['']) && !empty(COOKIE['']))
+
+$status = false;
+
+if(!empty($_COOKIE['user']) && !empty($_COOKIE['time'])){
+$status = true;
+}
 ?>
