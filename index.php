@@ -4,7 +4,7 @@
 include 'master.php';
 ?>
 
-<import class="text/rel" style="stylesheet" name="bootstrap.css">
+
 
 <script type="text/javascript" src="js/javascript.js">>
 
@@ -33,8 +33,11 @@ window.onload = function() {
 
 <?php
 
-//I want to scale back the header.  In a prior project, header handled everything.
+//I want to scale back the header.  In a prior project, header handled everything.  In this one,
+//it will only cover the banner and objects inside of that.
+
 include 'header.php';
+
 ?>
 
 <form>

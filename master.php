@@ -5,4 +5,5 @@ include 'authenticate.php';
 
 ?>
 
-<title>Firebook</title>
+<link type="text/css" rel="stylesheet" href="style/bootstrap.css">
+  <link type="text/css" rel="stylesheet" href="style/stylesheet.css">
