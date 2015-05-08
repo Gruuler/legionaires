@@ -30,9 +30,9 @@
 			setcookie("time", $time, $expirationTime);
 			setcookie("hash", $hash, $expirationTime);
 
-			header ('location:index.php');
+			return true;
 		
 		}
 	}
-	header ('location:login.html?auth=false');
+	return false;
 ?>
