@@ -16,3 +16,45 @@ var createXMLHttp = function() {
   return xHttp;
 }
 
+var submitForm = function() {
+	var shouldSubmit = true;
+
+	//Check on Username
+	if($('uName').value.length < 3){
+		shouldSubmit = false;
+		$('badUser').innerHTML = "Username does not meet length requirements.";
+	}else{
+		$('badUser').innerHTML = "";
+	}
+
+	//Check on Password
+	if($('password').value.length < 6){
+		shouldSubmit = false;
+		$('badPassword').innerHTML = "Password does not meet length requirements.";
+	}else{
+		$('badPassword').innerHTML = "";
+	}
+
+	//Final check, passes form on if approved.
+	if(shouldSubmit){
+		$("login").submit();
+	}
+}
+
+var charSearch = function() {
+	var character = $('cSearch').value;
+	if(character != ""){
+		var url = "https://www.bungie.net/platform/Destiny/SearchDestinyPlayer/1/" + character;
+		var xmlHttp = createXMLHttp();
+		xmlHttp.open('get', url);
+		xmlHttp.send();
+	}else{
+
+	}
+}
+
+//When the window loads, this function declares specific vaiables tied in to the page.
+window.onload = function() {
+	$("loginSubmit").onclick = submitForm;
+	sButton.onclick = charSearch;
+}
