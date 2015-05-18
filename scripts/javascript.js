@@ -37,7 +37,19 @@ var submitForm = function() {
 
 	//Final check, passes form on if approved.
 	if(shouldSubmit){
-		$("login").submit();
+		var url = "login.php"
+		var xml = createXMLHttp();
+		xmlHttp.open('post');
+		xmlHttp.send();
+		var results="";
+		xmlHttp.onreadystatechange = function(){
+			if(xmlHttp.readyState == 4){
+				var rows = JSON.parse(xmlHttp.responseText);
+				for(i=0; i<rows.length; i++) {
+					echo "test";
+				}
+			}
+		}
 	}
 }
 
@@ -48,10 +60,9 @@ var charSearch = function() {
 		var xmlHttp = createXMLHttp();
 		xmlHttp.open('get', url);
 		xmlHttp.send();
-	}else{
-
 	}
 }
+
 
 //When the window loads, this function declares specific vaiables tied in to the page.
 window.onload = function() {
