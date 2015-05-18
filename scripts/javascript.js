@@ -20,7 +20,7 @@ var submitForm = function() {
 	var shouldSubmit = true;
 
 	//Check on Username
-	if($('uName').value.length < 3){
+	if($('uName').value.length < 3) {
 		shouldSubmit = false;
 		$('badUser').innerHTML = "Username does not meet length requirements.";
 	}else{
@@ -28,7 +28,7 @@ var submitForm = function() {
 	}
 
 	//Check on Password
-	if($('password').value.length < 6){
+	if($('password').value.length < 6) {
 		shouldSubmit = false;
 		$('badPassword').innerHTML = "Password does not meet length requirements.";
 	}else{
@@ -36,18 +36,15 @@ var submitForm = function() {
 	}
 
 	//Final check, passes form on if approved.
-	if(shouldSubmit){
-		var url = "login.php"
+	if(shouldSubmit) {
+		var url = "scripts/login.php"
+		var post = "uName=".$('uName')."&password=".$('password')
 		var xml = createXMLHttp();
-		xmlHttp.open('post');
-		xmlHttp.send();
-		var results="";
-		xmlHttp.onreadystatechange = function(){
-			if(xmlHttp.readyState == 4){
-				var rows = JSON.parse(xmlHttp.responseText);
-				for(i=0; i<rows.length; i++) {
-					echo "test";
-				}
+		xmlHttp.open('POST',url,true);
+		xmlHttp.send(post);
+		xmlHttp.onreadystatechange = function() {
+			if(xmlHttp.readyState == 4) {
+				var results = JSON.parse(xmlHttp.responseText);				
 			}
 		}
 	}
@@ -67,5 +64,5 @@ var charSearch = function() {
 //When the window loads, this function declares specific vaiables tied in to the page.
 window.onload = function() {
 	$("loginSubmit").onclick = submitForm;
-	sButton.onclick = charSearch;
+	$("sButton").onclick = charSearch;
 }
